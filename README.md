@@ -76,7 +76,7 @@ document.getElementById('file').addEventListener('change', (e) => {
 
   new Compressor(file, {
     quality: 0.6,
-    success(result) {
+    success: function(result) {
       const formData = new FormData();
 
       // The third parameter is required for server
@@ -87,7 +87,7 @@ document.getElementById('file').addEventListener('change', (e) => {
         console.log('Upload success');
       });
     },
-    error(err) {
+    error: function(err) {
       console.log(err.message);
     },
   });
